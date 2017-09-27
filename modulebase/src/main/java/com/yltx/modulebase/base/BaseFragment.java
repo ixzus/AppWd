@@ -1,5 +1,7 @@
 package com.yltx.modulebase.base;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -18,6 +20,7 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends LazyFragment {
     protected String TAG;
     protected Unbinder unbinder;
+    protected Activity mContext;
 
     @Nullable
     @Override
@@ -34,6 +37,7 @@ public abstract class BaseFragment extends LazyFragment {
         super.onViewCreated(view, savedInstanceState);
         TAG = getActivity().getPackageName() + "." + getClass().getSimpleName();
         unbinder = ButterKnife.bind(this, view);
+        mContext = getActivity();
         initView();
         initData();
 

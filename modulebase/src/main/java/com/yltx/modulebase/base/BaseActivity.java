@@ -87,7 +87,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
             setSupportActionBar(getToolBar());
             getSupportActionBar().setDisplayShowTitleEnabled(false);
             if (isBack) {
-                getToolBar().setNavigationIcon(R.mipmap.ic_del);
+                getToolBar().setNavigationIcon(R.mipmap.ic_back);
                 getToolBar().setNavigationOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

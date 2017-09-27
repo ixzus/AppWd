@@ -1,0 +1,5 @@
+<resources>
+    <style name="checkBoxProtocol">
+        <item name="android:button">@drawable/cb_protocol</item>
+    </style>
+</resources>

@@ -95,7 +95,7 @@ public abstract class BaseMVPActivity<P extends BasePresenter> extends RxAppComp
     protected void initToolBar(boolean isBack, String title, String subTitle) {
         if (null != getToolBar()) {
             if (isBack) {
-                getToolBar().setNavigationIcon(R.mipmap.ic_del);
+                getToolBar().setNavigationIcon(R.mipmap.ic_back);
                 getToolBar().setNavigationOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
