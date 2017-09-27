@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 import android.widget.TextView;
 
 import com.yltx.modulebase.base.BaseActivity;
@@ -28,6 +29,18 @@ public class MainActivity extends BaseActivity {
         initToolBar(true, "小白卡", "借还记录");
         main_home = (TextView) findViewById(R.id.main_home);
         main_my = (TextView) findViewById(R.id.main_my);
+        main_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectIndex(0);
+            }
+        });
+        main_my.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectIndex(1);
+            }
+        });
         if (savedInstanceState != null) {
             List<Fragment> fragmentList = getSupportFragmentManager().getFragments();
             for (Fragment fragment : fragmentList) {
@@ -58,6 +71,23 @@ public class MainActivity extends BaseActivity {
 
     }
 
-//    private void selectIndex(int index)
+    private void selectIndex(int index){
+        switch(index){
+            case 0:
+                initToolBar(true, "小白卡", "借还记录");
+                getSupportFragmentManager().beginTransaction()
+                        .show(homeFragment)
+                        .hide(myFragment)
+                        .commit();
+                break;
+            case 1:
+                initToolBar(false, "账户", null);
+                getSupportFragmentManager().beginTransaction()
+                        .show(myFragment)
+                        .hide(homeFragment)
+                        .commit();
+                break;
+        }
+    }
 
 }
