@@ -16,24 +16,24 @@ import com.yltx.modulewd.borrow.lsit.ListActivity;
 
 
 public class HomeFragment extends BaseFragment {
-    public TextView tv_add;
-    public SuperButton btn_add;
-    public TextView tv_open;
-    public SuperButton btn_open;
-    public ConstraintLayout cl_top;
-    public TextView tv_limit;
-    public TextView tv_subLimit;
-    public Guideline guide;
-    public SuperButton btn_do;
-    public CheckBox checkbox;
-    public TextView tv_protocol;
-    public TextView tv_doc;
-    public TextView tv_line;
-    public TextView issus;
-    public Guideline guideline;
-    public TextView tv_effcient;
-    public TextView tv_safety;
-    public TextView tv_free;
+    private TextView tv_add;
+    private SuperButton btn_add;
+    private TextView tv_open;
+    private SuperButton btn_open;
+    private ConstraintLayout cl_top;
+    private TextView tv_limit;
+    private TextView tv_subLimit;
+    private Guideline guide;
+    private SuperButton btn_do;
+    private CheckBox checkbox;
+    private TextView tv_protocol;
+    private TextView tv_doc;
+    private TextView tv_line;
+    private TextView issus;
+    private Guideline guideline;
+    private TextView tv_effcient;
+    private TextView tv_safety;
+    private TextView tv_free;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -74,24 +74,24 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        tv_add = mContext.findViewById(R.id.tv_add);
-        btn_add = mContext.findViewById(R.id.btn_add);
-        tv_open = mContext.findViewById(R.id.tv_open);
-        btn_open = mContext.findViewById(R.id.btn_open);
-        cl_top = mContext.findViewById(R.id.cl_top);
-        tv_limit = mContext.findViewById(R.id.tv_limit);
-        tv_subLimit = mContext.findViewById(R.id.tv_subLimit);
-        guide = mContext.findViewById(R.id.guide);
-        btn_do = mContext.findViewById(R.id.btn_do);
-        checkbox = mContext.findViewById(R.id.checkbox);
-        tv_protocol = mContext.findViewById(R.id.tv_protocol);
-        tv_doc = mContext.findViewById(R.id.tv_doc);
-        tv_line = mContext.findViewById(R.id.tv_line);
-        issus = mContext.findViewById(R.id.issus);
-        guideline = mContext.findViewById(R.id.guideline);
-        tv_effcient = mContext.findViewById(R.id.tv_effcient);
-        tv_safety = mContext.findViewById(R.id.tv_safety);
-        tv_free = mContext.findViewById(R.id.tv_free);
+        tv_add = rootView.findViewById(R.id.tv_add);
+        btn_add = rootView.findViewById(R.id.btn_add);
+        tv_open = rootView.findViewById(R.id.tv_open);
+        btn_open = rootView.findViewById(R.id.btn_open);
+        cl_top = rootView.findViewById(R.id.cl_top);
+        tv_limit = rootView.findViewById(R.id.tv_limit);
+        tv_subLimit = rootView.findViewById(R.id.tv_subLimit);
+        guide = rootView.findViewById(R.id.guide);
+        btn_do = rootView.findViewById(R.id.btn_do);
+        checkbox = rootView.findViewById(R.id.checkbox);
+        tv_protocol = rootView.findViewById(R.id.tv_protocol);
+        tv_doc = rootView.findViewById(R.id.tv_doc);
+        tv_line = rootView.findViewById(R.id.tv_line);
+        issus = rootView.findViewById(R.id.issus);
+        guideline = rootView.findViewById(R.id.guideline);
+        tv_effcient = rootView.findViewById(R.id.tv_effcient);
+        tv_safety = rootView.findViewById(R.id.tv_safety);
+        tv_free = rootView.findViewById(R.id.tv_free);
         status(UserCaStatus.USER_CA);
         checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

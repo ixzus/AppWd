@@ -9,7 +9,9 @@
         <activity
             android:name=".borrow.detail.BorrowDetailActivity"
             android:theme="@style/BaseAppTheme" />
-        <activity android:name=".borrow.lsit.ListActivity"></activity>
+        <activity
+            android:name=".borrow.lsit.ListActivity"
+            android:theme="@style/BaseAppTheme"></activity>
     </application>
 
 </manifest>

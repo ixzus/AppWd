@@ -16,8 +16,6 @@ public class MainActivity extends BaseActivity {
     private MyFragment myFragment;
     private TextView main_home;
     private TextView main_my;
-    private TextView toolbar_title;
-    private TextView toolbar_subtitle;
 
     @Override
     protected int initLayout() {
