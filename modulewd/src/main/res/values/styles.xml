@@ -2,4 +2,11 @@
     <style name="checkBoxProtocol">
         <item name="android:button">@drawable/cb_protocol</item>
     </style>
+
+    <style name="TabLayout">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/tv6</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
 </resources>

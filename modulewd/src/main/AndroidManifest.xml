@@ -6,6 +6,10 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/BaseAppTheme" />
+        <activity
+            android:name=".borrow.detail.BorrowDetailActivity"
+            android:theme="@style/BaseAppTheme" />
+        <activity android:name=".borrow.lsit.ListActivity"></activity>
     </application>
 
 </manifest>

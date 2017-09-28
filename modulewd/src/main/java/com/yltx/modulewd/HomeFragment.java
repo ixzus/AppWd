@@ -1,6 +1,7 @@
 package com.yltx.modulewd;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.Guideline;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.allen.library.SuperButton;
 import com.yltx.modulebase.base.BaseFragment;
+import com.yltx.modulewd.borrow.lsit.ListActivity;
 
 
 public class HomeFragment extends BaseFragment {
@@ -99,6 +101,12 @@ public class HomeFragment extends BaseFragment {
                 } else {
                     btn_do.setEnabled(false);
                 }
+            }
+        });
+        btn_do.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(mContext, ListActivity.class));
             }
         });
     }
