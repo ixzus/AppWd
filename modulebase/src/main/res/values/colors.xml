@@ -4,8 +4,8 @@
     <color name="colorPrimary">#32A7F6</color><!--首要颜色-->
     <color name="colorPrimaryDark">#32A7F6</color><!--首要颜色暗色-->
     <color name="colorAccent">#32A7F6</color><!--色彩强调-->
-    <color name="colorBg">#F4F4F4</color><!--色彩强调-->
-    <color name="colorStatus">#32A7F6</color><!--色彩强调-->
+    <color name="colorBg">#F4F4F4</color>
+    <color name="colorStatus">#32A7F6</color>
 
     <color name="black">#000000</color><!--黑色 -->
     <color name="white">#FFFFFF</color><!--白色-->

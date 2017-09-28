@@ -84,20 +84,32 @@ public abstract class BaseActivity extends RxAppCompatActivity {
 
     protected void initToolBar(boolean isBack, String title, String subTitle) {
         if (null != getToolBar()) {
+            setSupportActionBar(getToolBar());
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
             if (isBack) {
-                getToolBar().setNavigationIcon(R.mipmap.ic_del);
+                getToolBar().setNavigationIcon(R.mipmap.ic_back);
                 getToolBar().setNavigationOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         onBackPressed();
                     }
                 });
+            } else {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             }
-            if (!TextUtils.isEmpty(title) && null != getToolBarTitle()) {
-                getToolBarTitle().setText(title);
+            if (null != getToolBarTitle()) {
+                if (TextUtils.isEmpty(title)) {
+                    getToolBarTitle().setText("");
+                } else {
+                    getToolBarTitle().setText(title);
+                }
             }
-            if (!TextUtils.isEmpty(subTitle) && null != getToolBarSubTitle()) {
-                getToolBarSubTitle().setText(subTitle);
+            if (null != getToolBarSubTitle()) {
+                if (TextUtils.isEmpty(subTitle)) {
+                    getToolBarSubTitle().setText("");
+                } else {
+                    getToolBarSubTitle().setText(subTitle);
+                }
             }
         }
     }

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yltx.modulewd.borrow.detail.BorrowDetailActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_top"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="待还款金额"
+                    android:textColor="@color/tv3"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_title_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="28dp"
+                    android:layout_marginTop="4dp"
+                    android:text="￥5,000"
+                    android:textColor="@color/tvo"
+                    android:textSize="32sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+                <ImageView
+                    android:id="@+id/iv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@mipmap/ic_pay_off" />
+
+                <TextView
+                    android:id="@+id/tv_title_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="28dp"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/tv3"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_status"
+                    tools:text="借款待审核" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:background="@color/colorBg"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_top" />
+
+            <TextView
+                android:id="@+id/tv_no_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="借款单号:"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line" />
+
+            <TextView
+                android:id="@+id/tv_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_no_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="YL2017000000000000000000" />
+
+            <TextView
+                android:id="@+id/tv_money_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="借款金额:"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_no_title" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_money_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="5000元" />
+
+            <TextView
+                android:id="@+id/tv_status_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="借款状态:"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_money_title" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_status_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="借款待审核" />
+
+            <TextView
+                android:id="@+id/tv_cycle_time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="借款周期:"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_status_title" />
+
+            <TextView
+                android:id="@+id/tv_cycle_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_cycle_time_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="30天" />
+
+            <TextView
+                android:id="@+id/tv_cycle_time_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/tvo"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_cycle_time_title"
+                app:layout_constraintRight_toLeftOf="@+id/tv_cycle_time"
+                tools:text="(2017/9/1-2017/10/1)" />
+
+            <TextView
+                android:id="@+id/tv_start_time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="借款时间:"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cycle_time_title" />
+
+            <TextView
+                android:id="@+id/tv_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_start_time_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="2017/9/1 12:00:00" />
+
+            <TextView
+                android:id="@+id/tv_end_time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="还  款  日:"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_start_time_title" />
+
+            <TextView
+                android:id="@+id/tv_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_end_time_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="2017/10/1 12:00:00" />
+
+            <TextView
+                android:id="@+id/tv_tip_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="手  续  费:"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_end_time_title" />
+
+            <TextView
+                android:id="@+id/tv_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_tip_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="0.15%" />
+
+            <TextView
+                android:id="@+id/tv_overdue_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="已逾期 (天):"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tip_title" />
+
+            <TextView
+                android:id="@+id/tv_overdue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_overdue_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="0天" />
+
+            <TextView
+                android:id="@+id/tv_fine_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="逾期罚金:"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_overdue_title" />
+
+            <TextView
+                android:id="@+id/tv_fine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_fine_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="0元" />
+
+            <TextView
+                android:id="@+id/tv_bank_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="收款银行卡:"
+                android:textColor="@color/tv6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fine_title" />
+
+            <TextView
+                android:id="@+id/tv_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/tv3"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_bank_title"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="中国建设银行 (尾号0000)" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_bottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bank_title">
+
+                <TextView
+                    android:id="@+id/tv_remark_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="备        注:"
+                    android:textColor="@color/tv6"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_remark"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/tvo"
+                    android:visibility="gone"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tv_remark_title"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_remark_title"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:text="系统审核不通过,已关闭借款申请系统审核不通过,已关闭借款申请" />
+
+
+                <com.allen.library.SuperButton
+                    android:id="@+id/btn_do"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="25dp"
+                    android:text="我要借钱"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:sCornersRadius="3dp"
+                    app:sSelectorNormalColor="@color/base_color"
+                    app:sSelectorPressedColor="@color/click_color"
+                    app:sUseSelector="true" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_doc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="还款说明"
+                android:textColor="@color/base_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_line"
+                app:layout_constraintRight_toLeftOf="@+id/tv_line"
+                app:layout_constraintTop_toTopOf="@+id/tv_line" />
+
+            <TextView
+                android:id="@+id/tv_line"
+                android:layout_width="1dp"
+                android:layout_height="12dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="44dp"
+                android:background="@color/base_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_bottom" />
+
+            <TextView
+                android:id="@+id/issus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="常见问题"
+                android:textColor="@color/base_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_line"
+                app:layout_constraintLeft_toRightOf="@+id/tv_line"
+                app:layout_constraintTop_toTopOf="@+id/tv_line" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>
